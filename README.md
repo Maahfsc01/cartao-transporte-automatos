@@ -18,8 +18,6 @@ Escolhemos o transporte público para colocar em prática o que aprendemos sobre
 
 O projeto funciona em um painel com três abas, feito no Jupyter Notebook.
 
-## Como ficaram as telas
-
 ### 1. Validador
 
 ![Tela do validador](imagens/validador.png)
