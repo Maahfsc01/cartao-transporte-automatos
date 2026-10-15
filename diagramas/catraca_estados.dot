@@ -1,0 +1,39 @@
+// R4 - Máquina de estados da catraca
+digraph catraca {
+	bgcolor="#ffffff" fontname="DejaVu Sans" fontsize=18 label="R4 — Máquina de Estados da Catraca" labelloc=t nodesep=0.55 pad=0.4 rankdir=LR ranksep=1.45
+	node [color="#4169a1" fillcolor="#eff6ff" fontname="DejaVu Sans" fontsize=11 margin="0.18,0.1" shape=box style="rounded,filled"]
+	edge [arrowsize=0.7 color="#475569" fontcolor="#0f172a" fontname="DejaVu Sans" fontsize=9]
+	inicio [label="" color="#475569" shape=point width=0.08]
+	TRAVADA [label=TRAVADA fillcolor="#eff6ff" penwidth=2]
+	CARTAO_LIDO [label="CARTAO
+LIDO" fillcolor="#eff6ff" penwidth=1]
+	VERIFICANDO_SALDO [label="VERIFICANDO
+SALDO" fillcolor="#eff6ff" penwidth=1]
+	LIBERADA [label=LIBERADA fillcolor="#eff6ff" penwidth=1]
+	GIRANDO [label=GIRANDO fillcolor="#eff6ff" penwidth=1]
+	PASSAGEM_REGISTRADA [label="PASSAGEM
+REGISTRADA" fillcolor="#d1fae5" penwidth=1]
+	SEM_SALDO [label="SEM
+SALDO" fillcolor="#fef3c7" penwidth=1]
+	inicio -> TRAVADA [label="início"]
+	TRAVADA -> CARTAO_LIDO [label="APROXIMAR
+CARTAO"]
+	CARTAO_LIDO -> VERIFICANDO_SALDO [label="VALIDAR
+CARTAO"]
+	CARTAO_LIDO -> TRAVADA [label=CANCELAR]
+	VERIFICANDO_SALDO -> LIBERADA [label="SALDO
+SUFICIENTE"]
+	VERIFICANDO_SALDO -> SEM_SALDO [label="SALDO
+INSUFICIENTE"]
+	VERIFICANDO_SALDO -> TRAVADA [label=CANCELAR]
+	LIBERADA -> GIRANDO [label="INICIAR
+GIRO"]
+	LIBERADA -> TRAVADA [label="TEMPO
+ESGOTADO"]
+	GIRANDO -> PASSAGEM_REGISTRADA [label="CONCLUIR
+GIRO"]
+	PASSAGEM_REGISTRADA -> TRAVADA [label=REARMAR]
+	SEM_SALDO -> VERIFICANDO_SALDO [label="RECARGA
+CONFIRMADA"]
+	SEM_SALDO -> TRAVADA [label=CANCELAR]
+}
