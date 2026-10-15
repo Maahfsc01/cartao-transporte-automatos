@@ -52,4 +52,4 @@ O arquivo **[Inicio.ipynb](Inicio.ipynb)** abre o painel. O **[notebook de exemp
 
 Os desenhos dos autômatos ficam na pasta [`diagramas`](diagramas/). O código Python fica em `src` e os testes ficam em `tests`.
 
-> No GitHub, os arquivos e as imagens podem ser vistos normalmente, mas os botões interativos precisam ser executados no Jupyter.
+
